@@ -7,7 +7,8 @@ npm install
 
 ### Compiles and hot-reloads for development
 ```
-npm run serve
+npm run serve啊对对
+
 ```
 
 ### Compiles and minifies for production
@@ -19,6 +20,8 @@ npm run build
 ```
 npm run lint
 ```
-
-### Customize configuration
+okk
+### Customize configuration1111测试
 See [Configuration Reference](https://cli.vuejs.org/config/).
+
+
