@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import HomeView from '../views/HomeView.vue'
@@ -28,10 +29,43 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   },
 ]
+=======
+import VueRouter from 'vue-router';
+import HomePage from "@/pages/BBSHome";
+import QuestionsAnswer from "@/pages/BBSAsk";
+import Community from "@/pages/BBSCommunity";
+>>>>>>> 73c35a23730790a44ff3c778304a92b336bb569a
 
+//创建一个路由器
 const router = new VueRouter({
-  routes
+    mode: 'history',
+    routes: [
+        {
+            name: '/',
+            path: '/',
+            component: HomePage,
+        },
+        {
+            name: 'home',
+            path: '/home',
+            component: HomePage,
+        },
+        {
+            name: 'ask',
+            path: '/ask',
+            component: QuestionsAnswer,
+        },
+        {
+            name: 'community',
+            path: '/community',
+            component: Community,
+        }
+    ]
 })
+<<<<<<< HEAD
 
 
 export default router
+=======
+export default router
+>>>>>>> 73c35a23730790a44ff3c778304a92b336bb569a
