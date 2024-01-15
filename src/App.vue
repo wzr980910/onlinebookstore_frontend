@@ -1,7 +1,7 @@
 <template>
     <div>
-        <BBSHeader/>
-        <!-- <router-view></router-view> -->
+        <!-- <BBSHeader/> -->
+        <router-view></router-view>
     </div>
 </template>
 

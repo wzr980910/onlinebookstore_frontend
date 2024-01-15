@@ -2,7 +2,6 @@ import VueRouter from 'vue-router';
 import HomePage from "@/pages/BBSHome";
 import QuestionsAnswer from "@/pages/BBSAsk";
 import Community from "@/pages/BBSCommunity";
-
 //创建一个路由器
 const router = new VueRouter({
     mode: 'history',
@@ -16,17 +15,19 @@ const router = new VueRouter({
             name: 'home',
             path: '/home',
             component: HomePage,
-        },
-        {
-            name: 'ask',
-            path: '/ask',
-            component: QuestionsAnswer,
-        },
-        {
-            name: 'community',
-            path: '/community',
-            component: Community,
-        }
+            children: [
+              {
+                name: 'ask',
+                path: 'ask',
+                component: QuestionsAnswer,
+              },
+              {
+                name: 'community',
+                path: 'community',
+                component: Community,
+              }
+            ]
+          }
     ]
 })
 export default router
