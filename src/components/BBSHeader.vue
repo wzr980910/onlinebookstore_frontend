@@ -8,7 +8,7 @@
                 </h1>
                 <nav>
                     <router-link active-class="active" to="/home">首页</router-link>
-                    <router-link active-class="active" to="/ask">购物车</router-link>
+                    <router-link active-class="active" to="/cart">购物车</router-link>
                     <router-link active-class="active" to="/community">订单</router-link>
                 </nav>
             </div>
@@ -17,17 +17,17 @@
                 <input class="button" type="button" value="搜索">
                 <img src="../assets/portrait.png">
                 <nav>
-                    <a >嗯</a>
-                    <a>还没想好</a>
+                    <router-link active-class="active" to="/login">登录</router-link>
+                    <a>注册</a>
                 </nav>
             </div>
         </div>
-        <div class="contents">
+        <!-- <div class="contents">
             <div class="content">
-                <!--指定组件的位置-->
+                指定组件的位置
                 <router-view></router-view>
             </div>
-        </div>
+        </div> -->
 
     </div>
 </template>

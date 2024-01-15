@@ -5,6 +5,10 @@ import QuestionsAnswer from "@/pages/BBSAsk";
 import Community from "@/pages/BBSCommunity";
 import LoginPage from "@/Login/Login";
 import HomeViewVue from '@/views/HomeView.vue';
+import Car from '@/pages/Cart'
+import BookDateilsVue from "@/pages/BookDateils.vue";
+
+
 Vue.use(VueRouter)
 
 //创建一个路由器
@@ -29,6 +33,16 @@ const router = new VueRouter({
                 name: 'home',
                 path: 'home',
                 component: HomePage,
+              },
+              {
+                name: 'cart',
+                path: 'cart',
+                component: Car,
+              },
+              {
+                name: 'bookdetails',
+                path: 'bookdetails',
+                component: BookDateilsVue,
               },
               {
                 name: 'community',

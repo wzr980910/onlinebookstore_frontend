@@ -9,6 +9,13 @@ Vue.config.productionTip = false
 
 //配置axios全局使用
 axios.defaults.baseURL = 'http://localhost:8081/'
+
+
+axios.defaults.headers.post["Content-Type"] = "application/x-www-form-urlencoded"
+//解决后端存储不了session的问题
+axios.defaults.withCredentials = true
+Vue.prototype.$axios = axios
+
 //引入 router
 import VueRouter from 'vue-router';
 // import router from "@/router";
