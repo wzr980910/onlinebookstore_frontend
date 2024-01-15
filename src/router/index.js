@@ -2,15 +2,20 @@ import VueRouter from 'vue-router';
 import HomePage from "@/pages/BBSHome";
 import QuestionsAnswer from "@/pages/BBSAsk";
 import Community from "@/pages/BBSCommunity";
+import LoginPage from "@/Login/Login"
+
 //创建一个路由器
 const router = new VueRouter({
     mode: 'history',
     routes: [
         {
-            name: '/',
             path: '/',
-            component: HomePage,
-        },
+            name: 'login',
+            component: LoginPage,
+            meta: {
+                title: '登录'
+            }
+          },
         {
             name: 'home',
             path: '/home',
@@ -30,4 +35,8 @@ const router = new VueRouter({
           }
     ]
 })
+
+
+
 export default router
+
