@@ -56,7 +56,7 @@ export default {
                     //将获取的书籍详细信息装入bookInfo
                     this.bookInfo = res.data.content.message
                     //使用require避免webpack编译后图片地址改变而造成图片无法显示的情况
-                    this.coverUrl = this.bookInfo.picture ? require('../assets/' + this.bookInfo.picture) : ''
+                    // this.coverUrl = this.bookInfo.picture ? require('../assets/' + this.bookInfo.picture) : ''
                 } else {
                     return this.$message.error(res.data.statusMessage)
                 }

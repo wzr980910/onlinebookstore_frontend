@@ -101,7 +101,7 @@ export default {
                     this.tableData = res.data.content.message.books.map(book => {
                         return {
                             ...book,
-                            coverUrl: book.picture ? require('../assets/cover/' + book.picture) : ''
+                            // coverUrl: book.picture ? require('../assets/cover/' + book.picture) : ''
                         };
                     });
                     // 计算总和
