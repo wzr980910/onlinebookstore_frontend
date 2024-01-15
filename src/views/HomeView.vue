@@ -1,17 +1,16 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <div>
+      <BBSHeader></BBSHeader>
+          <router-view></router-view>
+    </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import BBSHeader from "@/components/BBSHeader";
 
 export default {
-  name: 'HomeView',
-  components: {
-    HelloWorld
-  }
+  components: { BBSHeader  },
 }
 </script>
+
+<style></style>

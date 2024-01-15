@@ -16,7 +16,8 @@
           <el-input class="password" type="password" suffix-icon="el-icon-lock" placeholder="密码"  v-model="password">
           </el-input>
         </div>
-        <div class="login-btn">登录</div>
+        <a class="login-btn" href="/home">登录</a>
+
 
   
       </div>

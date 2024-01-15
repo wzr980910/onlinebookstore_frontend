@@ -1,5 +1,6 @@
 <script>
 import { Carousel, CarouselItem, Row, Col } from 'element-ui';
+import BBSHeader from "@/components/BBSHeader";
 // 在Vue文件中引入所需的组件
 
 export default {
@@ -7,7 +8,8 @@ export default {
     'el-carousel': Carousel,
     'el-carousel-item': CarouselItem,
     'el-row': Row,
-    'el-col': Col
+    'el-col': Col,
+    BBSHeader
   },
   data() {
     return {
