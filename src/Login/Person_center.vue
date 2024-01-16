@@ -12,7 +12,7 @@
         <div class="main">
             <div class="person">
                 <el-descriptions title="用户信息">
-                    <el-descriptions-item label="用户昵称">sdnvvnvn</el-descriptions-item>
+                    <el-descriptions-item label="用户昵称" >sdnvvnvn</el-descriptions-item>
                     <el-descriptions-item label="用户账号">kooriookami</el-descriptions-item>
                     <el-descriptions-item label="手机号">18100000000</el-descriptions-item>
                     <el-descriptions-item label="默认收货地址">江苏省苏州市吴中区吴中大道 1188 号</el-descriptions-item>
@@ -20,19 +20,23 @@
             </div>
             <div class="order">
                 <div class="a">
-                    <h2>待付款</h2>
+                    <i slot="prefix" class="el-input__icon1 el-icon-bank-card"> 待付款</i>
+                    <!-- <h2 >待付款</h2> -->
                     <h4>0</h4>
                 </div>
                 <div class="b">
-                    <h2>待发货</h2>
+                    <i slot="prefix" class="el-input__icon1 el-icon-box"> 待发货</i>
+                    <!-- <h2>待发货</h2> -->
                     <h4>0</h4>
                 </div>
                 <div class="c">
-                    <h2>待收货</h2>
+                    <i slot="prefix" class="el-input__icon1 el-icon-office-building"> 待收货</i>
+                    <!-- <h2>待收货</h2> -->
                     <h4>0</h4>
                 </div>
                 <div class="d">
-                    <h2>全部订单></h2>
+                    <!-- <h2>全部订单></h2> -->
+                    <i slot="prefix" class="el-input__icon2 el-icon-finished"> 全部订单></i>
                 </div>
             </div>
             <div class="nothing"></div>
@@ -96,13 +100,21 @@ h5{
     flex-direction: row;
     gap: 12px;
 }
-h2{
+.el-input__icon1{
     font-size: 21px;
     line-height: 32px;
     color: #333;
     font-weight: 300;
-    margin-left: 80px;
+    margin-left: 70px;
     margin-top:15px ;
+}
+.el-input__icon2{
+    font-size: 21px;
+    line-height: 32px;
+    color: #333;
+    font-weight: 300;
+    margin-left: 60px;
+    margin-top:25px ;
 }
 h4{
     font-size: 21px;

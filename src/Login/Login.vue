@@ -69,6 +69,7 @@ export default {
   display: -ms-flexbox;
   display: flex;
   flex-direction: row;
+  box-shadow: 5px 5px 8px rgba(241, 134, 134, 0.5);
 }
 .box{
         width: 200px;
@@ -90,11 +91,11 @@ h1{
 .login-tip{
     font-size: 24px;
     font-weight: 500;
-    color: #333;
+    color: #fff;
     font-family: Source Han Sans CN;
     position:absolute;
     right:35px ;
-    top: 40px;
+    top: 35px;
 }
 .login-box{
   background:rgb(252, 245, 245);
@@ -192,11 +193,16 @@ h1{
   top:215px;
 }
 .register{
-    font-size: 20px;
-    color: #e10c0c;
+    font-size: 16px;
+    color: #090909;
     position:absolute;
     right:33px ;
     top: 345px;
+    cursor: pointer;
+}
+.register:hover{
+  font-size: 18px;
+  color: #e10c0c;
 }
 
   

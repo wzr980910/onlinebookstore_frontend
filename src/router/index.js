@@ -3,10 +3,18 @@ import VueRouter from "vue-router";
 import HomePage from "@/pages/BBSHome";
 import QuestionsAnswer from "@/pages/BBSAsk";
 import Community from "@/pages/BBSCommunity";
-import LoginPage from "@/Login/Login";
-import HomeViewVue from '@/views/HomeView.vue';
+// import LoginPage from "@/Login/Login";
+// import HomeViewVue from '@/views/HomeView.vue';
 import Car from '@/pages/Cart'
 import BookDateilsVue from "@/pages/BookDateils.vue";
+
+import Login from "../Login/Login.vue";
+import Register from "../Login/Register.vue";
+import Person_center from "../Login/Person_center.vue";
+
+import IndentVue from "@/pages/Indent.vue"
+import ClassVue from "@/pages/Class.vue";
+
 import IndentVue from "@/pages/Indent.vue"
 import ClassVue from "@/pages/Class.vue";
 import Person_center from "@/Login/Person_center.vue"
