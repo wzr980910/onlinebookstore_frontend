@@ -15,6 +15,8 @@ import Person_center from "../Login/Person_center.vue";
 import IndentVue from "@/pages/Indent.vue"
 import ClassVue from "@/pages/Class.vue";
 
+import IndentVue from "@/pages/Indent.vue"
+import ClassVue from "@/pages/Class.vue";
 
 
 Vue.use(VueRouter)
