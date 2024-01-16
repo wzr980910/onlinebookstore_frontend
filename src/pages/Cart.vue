@@ -41,7 +41,10 @@
             </el-table>
 
             <span>总计：{{ count }}</span>
-            <el-button type="primary" style="margin-left: 10px;" @click="showImageModal">结算</el-button>
+            <el-button class="custom-button" style="margin-left: 10px;" @click="showImageModal">
+                <a class="link-text">结算</a>
+                
+            </el-button>
             <el-dialog :visible="imageModalVisible" width="30%" @close="closeImageModal">
                 <img src="../assets/10.jpg" style="width: 100%;" />
             </el-dialog>
@@ -204,6 +207,7 @@ export default {
 
 .table {
     line-height: 40px;
+    text-align: right;
 }
 
 .pagination {
@@ -213,6 +217,13 @@ export default {
 .pagination * {
     display: flex;
     justify-content: center;
+}r
+
+li
+.pagination >.el-pager li{
+  background-color: transparent !important;
+  color: #131314 !important;
+  border: 1px solid #d1d3d4;
 }
 
 
@@ -221,7 +232,21 @@ export default {
     align-items: center;
 }
 
-.quantity-input .el-button {
+.el-button.custom-button {
+  background-color: #FF4040;
+  border-color: #FF4040;
+}
+
+.link-text {
+  color: #ffffff;
+}
+
+.link-text:hover {
+  cursor: pointer;
+  
+}
+
+.quantity-input.el-button {
     border-radius: 50%;
     width: 30px;
     height: 30px;

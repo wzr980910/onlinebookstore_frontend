@@ -7,6 +7,8 @@ import LoginPage from "@/Login/Login";
 import HomeViewVue from '@/views/HomeView.vue';
 import Car from '@/pages/Cart'
 import BookDateilsVue from "@/pages/BookDateils.vue";
+import IndentVue from "@/pages/Indent.vue"
+import ClassVue from "@/pages/Class.vue";
 
 
 Vue.use(VueRouter)
@@ -38,6 +40,16 @@ const router = new VueRouter({
                 name: 'cart',
                 path: 'cart',
                 component: Car,
+              },
+              {
+                name: 'indent',
+                path: 'indent',
+                component: IndentVue,
+              },
+              {
+                name: 'class',
+                path: 'class',
+                component: ClassVue,
               },
               {
                 name: 'bookdetails',

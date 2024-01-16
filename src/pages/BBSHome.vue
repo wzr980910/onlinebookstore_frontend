@@ -4,7 +4,9 @@
       <div class="card">
         <el-row>
           <el-col :span="24">
-            <div class="grid-content bg-purple-dark">商品分类</div>
+            <div class="grid-content bg-purple-dark">
+              <a class="span-change" href="/class">商品分类</a>
+            </div>
           </el-col>
         </el-row>
 
@@ -60,8 +62,10 @@
       <h2>推荐读物</h2>
       <hr class="hr">
     </div>
-    <div id="app">
+
+    <div>
       <div class="product-container">
+
         <div class="product-box" v-for="product in products" :key="product.name">
           <img :src="product.img" :alt="product.name">
           <h3>{{ product.name }}</h3>
@@ -288,7 +292,7 @@ export default {
         ['生活', '科技', '医学', '建筑']
       ],
       bookClassifyIcon: ['el-icon-office-building', 'el-icon-school', 'el-icon-guide', 'el-icon-cpu'],
-      bookClassifyTitle: ['人文社科', '文教音像', '童书', '生活科技']
+      bookClassifyTitle: ['人文社科', '文教音像', '儿童读物', '生活科技']
     };
   },
   mounted() {
@@ -373,6 +377,7 @@ export default {
 .classify-first-title {
   margin-top: 10px;
   margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .classify-second-item {
@@ -382,6 +387,10 @@ export default {
 
 .classify-second-title {
   margin-top: 10px;
+}
+
+.classify-second-title:hover{
+  cursor: wait;
 }
 
 
@@ -411,16 +420,22 @@ export default {
   min-height: 36px;
 }
 
+.span-change {
+  color: #000;
+  cursor: pointer;
+  text-decoration: none;
+}
+
 
 .ingrid-content {
   border-radius: 4px;
   min-height: 36px;
 }
 
-.inbg-purple-dark{
-  background-color:transparent
-
+.inbg-purple-dark {
+  background-color: transparent
 }
+
 .scroll-container {
   height: 300px;
   /* 设置容器高度 */
@@ -436,7 +451,7 @@ export default {
   padding: 0;
   animation: scroll 10s linear infinite;
   /* 设置滚动动画 */
- 
+
 }
 
 @keyframes scroll {
@@ -493,6 +508,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  margin-top: 5px;
 }
 
 .product-box {
@@ -501,10 +517,21 @@ export default {
   /* border: 1px solid #ccc; */
   padding: 20px;
   display: flex;
+  margin-top: 10px;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid transparent;
+  /*transition: border-color 0.3s ease; */
+  transition: 0.3s;
+}
+
+.product-box:hover {
+  border: 1px solid #D21A1A;
+  cursor: pointer;
+  transform: translateY(-5px);
+
 }
 
 .product-box img {
@@ -541,7 +568,7 @@ export default {
 .hr {
   border: none;
   border-top: 2px solid red;
-
+  margin-bottom: 10px;
 }
 </style>
 

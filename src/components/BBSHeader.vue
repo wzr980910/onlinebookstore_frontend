@@ -9,7 +9,7 @@
                 <nav>
                     <router-link active-class="active" to="/home">首页</router-link>
                     <router-link active-class="active" to="/cart">购物车</router-link>
-                    <router-link active-class="active" to="/community">订单</router-link>
+                    <router-link active-class="active" to="/indent">订单</router-link>
                 </nav>
             </div>
             <div class="box">

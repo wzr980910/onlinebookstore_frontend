@@ -21,17 +21,18 @@ import VueRouter from 'vue-router';
 // import router from "@/router";
 //按需引入element-ui
 import 'element-ui/lib/theme-chalk/index.css';
-import {Row,Button} from 'element-ui';
+import '../src/style/pagination.css';
+import { Row, Button } from 'element-ui';
 
 //关闭生产提示
 Vue.config.productionTip = false
 
 
-Vue.component(Row.name,Row);
+Vue.component(Row.name, Row);
 Vue.component(Button.name, Button);
 
 new Vue({
-  el:'#app',
+  el: '#app',
   render: h => h(App),
-  router:router,
+  router: router,
 })
