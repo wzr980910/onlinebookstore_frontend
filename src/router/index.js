@@ -9,66 +9,75 @@ import Car from '@/pages/Cart'
 import BookDateilsVue from "@/pages/BookDateils.vue";
 import IndentVue from "@/pages/Indent.vue"
 import ClassVue from "@/pages/Class.vue";
+import Person_center from "@/Login/Person_center.vue"
 
 
 Vue.use(VueRouter)
 
 //创建一个路由器
 const router = new VueRouter({
-    mode: 'history',
-    base: process.env.BASE_URL,
-    routes: [
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes: [
+    {
+      path: '/login',
+      name: 'login',
+      component: LoginPage,
+      meta: {
+        title: '登录'
+      }
+    },
+    {
+      name: '/',
+      path: '/',
+      component: HomeViewVue,
+      children: [
         {
-            path: '/login',
-            name: 'login',
-            component: LoginPage,
-            meta: {
-                title: '登录'
-            }
+          name: 'home',
+          path: 'home',
+          component: HomePage,
+        },
+        {
+          name: 'cart',
+          path: 'cart',
+          component: Car,
+        },
+        {
+          name: 'indent',
+          path: 'indent',
+          component: IndentVue,
+        },
+        {
+          name: 'class',
+          path: 'class',
+          component: ClassVue,
+        },
+        {
+          name: 'bookdetails',
+          path: 'bookdetails',
+          component: BookDateilsVue,
+        },
+        {
+          path: 'person_center',
+          name: 'person_center',
+          component: Person_center,
+          meta: {
+            title: '个人中心'
           },
+        },
         {
-            name: '/',
-            path: '/',
-            component: HomeViewVue,
-            children: [
-              {
-                name: 'home',
-                path: 'home',
-                component: HomePage,
-              },
-              {
-                name: 'cart',
-                path: 'cart',
-                component: Car,
-              },
-              {
-                name: 'indent',
-                path: 'indent',
-                component: IndentVue,
-              },
-              {
-                name: 'class',
-                path: 'class',
-                component: ClassVue,
-              },
-              {
-                name: 'bookdetails',
-                path: 'bookdetails',
-                component: BookDateilsVue,
-              },
-              {
-                name: 'community',
-                path: 'community',
-                component: Community,
-              },
-              {
-                name: 'ask',
-                path: 'ask',
-                component: QuestionsAnswer,
-              }
-            ]
-          }
-    ]
+          name: 'community',
+          path: 'community',
+          component: Community,
+        },
+        {
+          name: 'ask',
+          path: 'ask',
+          component: QuestionsAnswer,
+        }
+      ]
+    }
+  ]
 })
 
 
