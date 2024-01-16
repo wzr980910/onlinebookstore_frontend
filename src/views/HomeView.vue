@@ -1,7 +1,7 @@
 <template>
   <div>
     <BBSHeader></BBSHeader>
-    <router-view></router-view>
+    <router-view> </router-view>
     <Footer></Footer>
   </div>
 </template>
