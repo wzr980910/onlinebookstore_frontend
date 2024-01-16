@@ -91,11 +91,11 @@
   .register-tip{
       font-size: 24px;
       font-weight: 500;
-      color: #333;
+      color: #fff;
       font-family: Source Han Sans CN;
       position:absolute;
       right:35px ;
-      top: 40px;
+      top: 35px;
   }
   .register-box{
     background:rgb(252, 245, 245);
@@ -210,11 +210,16 @@
     top:215px;
   }
   .login{
-      font-size: 20px;
-      color: #e10c0c;
+      font-size: 16px;
+      color: #050505;
       position:absolute;
       right:33px ;
       top: 345px;
+      cursor: pointer;
+  }
+  .login:hover{
+    font-size: 18px;
+    color: #e10c0c;
   }
   
     

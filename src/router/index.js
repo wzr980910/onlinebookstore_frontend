@@ -3,10 +3,13 @@ import VueRouter from "vue-router";
 import HomePage from "@/pages/BBSHome";
 import QuestionsAnswer from "@/pages/BBSAsk";
 import Community from "@/pages/BBSCommunity";
-import LoginPage from "@/Login/Login";
-import HomeViewVue from '@/views/HomeView.vue';
+// import LoginPage from "@/Login/Login";
+// import HomeViewVue from '@/views/HomeView.vue';
 import Car from '@/pages/Cart'
 import BookDateilsVue from "@/pages/BookDateils.vue";
+import Login from "../Login/Login.vue";
+import Register from "../Login/Register.vue";
+import Person_center from "../Login/Person_center.vue";
 
 
 Vue.use(VueRouter)
@@ -19,21 +22,37 @@ const router = new VueRouter({
         {
             path: '/login',
             name: 'login',
-            component: LoginPage,
+            component: Login,
             meta: {
                 title: '登录'
             }
           },
+          {
+            path: '/register',
+            name: 'register',
+            component: Register,
+            meta: {
+                title: '注册'
+            }
+          },
+          {
+            path: '/person_center',
+            name: 'person_center',
+            component: Person_center,
+            meta: {
+                title: '个人中心'
+          }
+        },
         {
             name: '/',
             path: '/',
-            component: HomeViewVue,
+            // component: HomeViewVue,
             children: [
-              {
-                name: 'home',
-                path: 'home',
-                component: HomePage,
-              },
+              // {
+              //   name: 'home',
+              //   path: 'home',
+              //   component: HomePage,
+              // },
               {
                 name: 'cart',
                 path: 'cart',
