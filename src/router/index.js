@@ -7,9 +7,14 @@ import Community from "@/pages/BBSCommunity";
 // import HomeViewVue from '@/views/HomeView.vue';
 import Car from '@/pages/Cart'
 import BookDateilsVue from "@/pages/BookDateils.vue";
+
 import Login from "../Login/Login.vue";
 import Register from "../Login/Register.vue";
 import Person_center from "../Login/Person_center.vue";
+
+import IndentVue from "@/pages/Indent.vue"
+import ClassVue from "@/pages/Class.vue";
+
 
 
 Vue.use(VueRouter)
@@ -35,14 +40,7 @@ const router = new VueRouter({
                 title: '注册'
             }
           },
-          {
-            path: '/person_center',
-            name: 'person_center',
-            component: Person_center,
-            meta: {
-                title: '个人中心'
-          }
-        },
+         
         {
             name: '/',
             path: '/',
@@ -58,6 +56,24 @@ const router = new VueRouter({
                 path: 'cart',
                 component: Car,
               },
+              {
+                name: 'indent',
+                path: 'indent',
+                component: IndentVue,
+              },
+              {
+                name: 'class',
+                path: 'class',
+                component: ClassVue,
+              },
+              {
+                path: '/person_center',
+                name: 'person_center',
+                component: Person_center,
+                meta: {
+                    title: '个人中心'
+              }
+            },
               {
                 name: 'bookdetails',
                 path: 'bookdetails',
