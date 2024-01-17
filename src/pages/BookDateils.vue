@@ -1,11 +1,17 @@
 <template>
     <div class="bookDetails">
+        <el-breadcrumb style="margin-bottom: 20px;" separator-class="el-icon-arrow-right">
+            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+            <el-breadcrumb-item>商品详情</el-breadcrumb-item>
+         
+        </el-breadcrumb>
         <el-row>
             <el-col :span="10">
                 <div class="grid-content">
                     <div class="demo-image__preview">
-                        <el-image style="width: 400px; height:480px" :src="coverUrl"
-                            :preview-src-list="coverUrl | filterImg">
+
+                        <el-image style="width: 300px; height:400px" :src="require('@/assets/11.jpg')">
+
                         </el-image>
                     </div>
                 </div>
@@ -14,18 +20,24 @@
                 <div class="grid-content">
                     <el-row>
                         <el-descriptions :column="1">
-                            <el-descriptions-item label="作者">{{ bookInfo.author }}</el-descriptions-item>
+                            <el-descriptions-item label="名称">《IU写真》</el-descriptions-item>
+                            <el-descriptions-item label="作者">天晓峰</el-descriptions-item>
                             <el-descriptions-item label="出版时间">{{ bookInfo.publish_date }}</el-descriptions-item>
                             <el-descriptions-item label="页数">{{ bookInfo.pages }}</el-descriptions-item>
                             <el-descriptions-item label="单价（元）">{{ bookInfo.price }}</el-descriptions-item>
                             <el-descriptions-item label="内容提要">{{ bookInfo.content }}</el-descriptions-item>
                         </el-descriptions>
                     </el-row>
-                    <el-row>
-                        <el-button type="danger" icon="el-icon-shopping-cart-full" @click="showCar()"
-                            round>加入购物车</el-button>
-                        <el-button type="info" icon="el-icon-view" round>在线预览</el-button>
-                        <el-button type="success" icon="el-icon-check" round>购买电子书</el-button>
+
+                    <el-row style="margin-top: 10%;">
+
+                        <el-input-number style="margin-right: 40px;" v-model="num" @change="handleChange"
+                            :min="0"></el-input-number>
+                        <el-button plain type="danger" icon="el-icon-shopping-cart-full"
+                            @click="showCar()">加入购物车</el-button>
+                        <el-button plain type="danger" icon="el-icon-view" @click="openLink">在线预览</el-button>
+                        <el-button plain type="danger" icon="el-icon-check" @click="sayHello">立即购买</el-button>
+
                     </el-row>
                 </div>
             </el-col>
@@ -34,19 +46,29 @@
 </template>
 
 <script>
-import axios from 'axios'
+import axios from 'axios';
+import { myMixin } from '@/methods/method.js';
 
 export default {
+    mixins: [myMixin],
     name: "BookDetails",
     data() {
         return {
             id: '',           //图书id
             bookInfo: {},     //图书详细信息
             coverUrl: '',      //图书封面地址
-            rel: ''
+            rel: '',
+            num: 1
         };
     },
     methods: {
+        openLink() {
+            window.open('https://www.baidu.com/s?tn=44004473_8_oem_dg&ie=utf-8&wd=iu%E5%86%99%E7%9C%9F');
+        },
+        handleChange(value) {
+            console.log(value);
+        },
+
         //获取图书列表详情
         getBookDetails() {
             axios.post("/getBookDetails", {
@@ -56,7 +78,7 @@ export default {
                     //将获取的书籍详细信息装入bookInfo
                     this.bookInfo = res.data.content.message
                     //使用require避免webpack编译后图片地址改变而造成图片无法显示的情况
-                    // this.coverUrl = this.bookInfo.picture ? require('../assets/' + this.bookInfo.picture) : ''
+                    // this.coverUrl = this.bookInfo.picture ? require('../assets/cover/' + this.bookInfo.picture) : ''
                 } else {
                     return this.$message.error(res.data.statusMessage)
                 }

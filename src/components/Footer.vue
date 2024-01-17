@@ -3,15 +3,16 @@
         <footer class="footer">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>关于我们-陈慧团队</h3>
+                    <h3>关于我们-双吴团队</h3>
                     <ul>
                         <li><a href="#"></a></li>
-                        <li><a href="#">陈慧</a></li>
+                       
                         <li><a href="#">吴孟桦</a></li>
                         <li><a href="#">杨万淞</a></li>
                         <li><a href="#">邓桂材</a></li>
                         <li><a href="#">吴泽睿</a></li>
                         <li><a href="#">陈康乐</a></li>
+                        <li><a href="#">陈慧</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
@@ -32,7 +33,7 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>版权所有 &copy; 2024  陈慧有限公司</p>
+                <p>版权所有 &copy; 2024  双吴有限公司</p>
             </div>
         </footer>
 

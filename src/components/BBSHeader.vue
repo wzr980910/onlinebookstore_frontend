@@ -16,11 +16,15 @@
                 <input class="text" type="text" placeholder="请输入关键词~~~" name="search">
                 <input class="button" type="button" value="搜索">
                 <a href="/person_center">
+                    <el-tooltip  class="item" effect="light" content="个人中心" placement="bottom">
                     <img src="../assets/portrait.png" alt="个人中心">
+                </el-tooltip>
                 </a>
 
                 <nav>
                     <router-link active-class="active" to="/login">登录</router-link>
+                    <!-- <el-tooltip class="item" effect="dark" content="Bottom Center 提示文字" placement="bottom"> -->
+      
                     <a>注册</a>
                 </nav>
             </div>
