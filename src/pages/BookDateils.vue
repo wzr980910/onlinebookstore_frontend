@@ -36,7 +36,7 @@
                         <el-button plain type="danger" icon="el-icon-shopping-cart-full"
                             @click="showCar()">加入购物车</el-button>
                         <el-button plain type="danger" icon="el-icon-view" @click="openLink">在线预览</el-button>
-                        <el-button plain type="danger" icon="el-icon-check" @click="sayHello">立即购买</el-button>
+                        <el-button plain type="danger" icon="el-icon-check" @click="">立即购买</el-button>
 
                     </el-row>
                 </div>
@@ -47,7 +47,7 @@
 
 <script>
 import axios from 'axios';
-import { myMixin } from '@/methods/method.js';
+
 
 export default {
     mixins: [myMixin],

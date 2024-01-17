@@ -1,18 +1,16 @@
 <template>
   <div>
-    <div class="carousel-container">
-      <div class="card">
-        <el-row>
-          <el-col :span="24">
-            <div class="grid-content bg-purple-dark">
-              <a class="span-change" href="/class">商品分类</a>
-            </div>
-          </el-col>
-        </el-row>
 
-        <el-row>
-          <el-col :span="12">
-            <div class="li-card">
+    <div class="container">
+      <div class="up">
+        <div class="grid-content bg-purple-dark">
+          <a class="span-change" href="/class">商品分类</a>
+        </div>
+
+      </div>
+      <div class="down">
+        <div class="right">
+          <div class="li-card">
               <div v-for="(row, rowIndex) in bookClassifyContent" :key="rowIndex">
                 <p class="classify-first-title">
                   <i :class="bookClassifyIcon[rowIndex]"></i>
@@ -25,35 +23,29 @@
                 </p>
               </div>
             </div>
-          </el-col>
 
-        </el-row>
-
-
-      </div>
-      <el-carousel :interval="4000" arrow="always" type="card" class="my-carousel">
-        <el-carousel-item v-for="item in dataList" :key="item.id">
-          <div class="">
-            <img :src="item.image" alt="" class="card-image">
+        </div>
+        <div class="left">
+          <div class="block">
+            <el-carousel height="360px">
+              <el-carousel-item v-for="item in dataList" :key="item.id">
+                <img :src="item.image" alt="" class="card-image">
+              </el-carousel-item>
+            </el-carousel>
           </div>
-        </el-carousel-item>
-      </el-carousel>
-
-
-
-
-      <div class="card-right">
-        <div class="ingrid-content inbg-purple-dark">
-          <h2>·最新公告</h2>
         </div>
+        <div class="right">
+          <div class="ingrid-content inbg-purple-dark">
+            <h2>·最新公告</h2>
+          </div>
 
-        <div class="scroll-container">
-          <ul class="notice-list">
-            <li v-for="(notice, index) in notices" :key="index">{{ notice }}</li>
-          </ul>
+          <div class="scroll-container">
+            <ul class="notice-list">
+              <li v-for="(notice, index) in notices" :key="index">{{ notice }}</li>
+            </ul>
+          </div>
         </div>
       </div>
-
     </div>
 
 
@@ -76,6 +68,7 @@
     </div>
 
     <div class="title-container">
+
       <div @mouseover="showCards1OnMouseOver">
         <h3>社科</h3>
       </div>
@@ -149,6 +142,21 @@ export default {
   },
   data() {
     return {
+      options: [{
+        value: 'ziyuan',
+        label: '资源',
+        children: [{
+          value: 'axure',
+          label: 'Axure Components'
+        }, {
+          value: 'sketch',
+          label: 'Sketch Templates'
+        }, {
+          value: 'jiaohu',
+          label: '组件交互文档'
+        }]
+      }],
+
 
       showCards1: false,
       showCards2: true,
@@ -330,48 +338,71 @@ export default {
   border-radius: 10px;
   width: 800px;
   height: 340px;
+  justify-content: space-between;
 
 }
 
-.carousel-container {
+.container {
+  width: 90%;
+  height: 400px;
+  background: white;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 400px;
+  flex-direction: column;
+  margin: auto;
+  z-index: 1
+}
+
+.up {
   width: 100%;
-  background-color: pink;
-  /* margin: 0 auto; */
+  height: 10%;
+  background: transparent;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
+.down {
+  width: 100%;
+  height: 90%;
+  background: transparent;
+  display: flex;
+  flex-direction: row;
+}
 
+.left {
+  width: 80%;
+  height: 100%;
+  background: #fff;
 
-.card {
-  width: 300px;
-  height: 400px;
-  border-radius: 6px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+}
+
+.right {
+  width: 20%;
+  height: 100%;
+  background: transparent;
+  display: flex;
+  justify-content: flex;
+  flex-direction: column;
+}
+
+.right span {
+  height: 30px;
+  margin-left: 10px;
+  display: inline-block;
+  transition: width 0.3s ease;
   background-color: transparent;
-  text-align: center;
-
+  position: relative; /* 设置为相对定位 */
+  z-index: 2; /* 设置较高的层级 */
 }
 
-.card-right {
 
-  width: 300px;
-  height: 400px;
-  text-align: left;
-  background-color: pink;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 6px;
-}
 
 .li-card {
   width: 300px;
   height: 150px;
   display: flex;
   flex-direction: column;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .classify-first-title {
@@ -382,14 +413,14 @@ export default {
 
 .classify-second-item {
   margin-right: 10px;
-  margin-top: 5px;
+  margin-top: 1px;
 }
 
 .classify-second-title {
-  margin-top: 10px;
+  margin-top: 5x;
 }
 
-.classify-second-title:hover{
+.classify-second-title:hover {
   cursor: wait;
 }
 
@@ -397,9 +428,9 @@ export default {
 
 .card-image {
   display: flex;
-  align-items: center;
-  justify-content: center;
+
   width: 100%;
+  height: 360px;
   object-fit: contain;
 }
 
@@ -407,7 +438,7 @@ export default {
 
 
 .bg-purple-dark {
-  background: rgba(255, 0, 0, 0.5);
+  background: rgba(253, 61, 61, 0.183);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -417,6 +448,7 @@ export default {
 
 .grid-content {
   border-radius: 4px;
+  width: 16.78%;
   min-height: 36px;
 }
 
@@ -476,28 +508,27 @@ export default {
 
 .title-container {
   display: flex;
-  justify-content: left;
   margin: 10px;
   margin-top: 40px;
 }
 
 .title-container>div>h3 {
-  max-width: 80px;
-
+  display: flex;
 }
 
 .title-container>div {
   flex-basis: 10%;
-  text-align: center;
-  padding: 2px;
+
   border: 1px solid #ccc;
   transition: background-color 0.3s ease;
-  width: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 
 .title-container>div:hover {
-  background-color: #f0f0f0;
+  background-color: pink;
 }
 
 
@@ -557,7 +588,7 @@ export default {
   /* 水平居中 */
   align-items: center;
   /* 垂直居中 */
-  background-color: #29e63c;
+  background-color: pink;
   color: #fff;
   padding: 2px 4px;
   text-decoration: none;
@@ -569,6 +600,18 @@ export default {
   border: none;
   border-top: 2px solid red;
   margin-bottom: 10px;
+}
+
+.bg {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -1;
+
+  background-size: cover;
 }
 </style>
 

@@ -217,25 +217,8 @@ export default {
 .pagination * {
     display: flex;
     justify-content: center;
-}r
-
-li
-.pagination >.el-pager li{
-  background-color: transparent !important;
-  color: #131314 !important;
-  border: 1px solid #d1d3d4;
 }
 
-
-.quantity-input {
-    display: flex;
-    align-items: center;
-}
-
-.el-button.custom-button {
-  background-color: #FF4040;
-  border-color: #FF4040;
-}
 
 .link-text {
   color: #ffffff;
